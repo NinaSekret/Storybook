@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { StyleSheet, css } from 'aphrodite/no-important';
+import { font, color } from '../../variables/variables';
 
 export default class MenuItem extends React.PureComponent {
     render() {
-        const { title, href } = this.props;
+        const { title, href, className } = this.props;
         return (
-            <li className={css(styles.menu_item)}><a className={css(styles.menu_item_link)} href={href}>{title}</a></li>
+            <li className={css(styles.menu_item, className)}><a className={css(styles.menu_item_link)} href={href}>{title}</a></li>
         );
     }
 }
@@ -19,25 +20,24 @@ const styles = StyleSheet.create({
         cursor: 'pointer',
         outline: 'none',
         listStyle: 'none',
-        color: '#fff',
+        color: color.white,
         ':hover': {
             borderWidth: 2,
             borderStyle: 'solid',
-            borderColor: '#4bcaff',
-            color: '#4bcaff',
+            borderColor: color.blue,
+            color: color.blue,
         },
         ':focus': {
             borderWidth: 2,
             borderStyle: 'solid',
-            borderColor: '#4bcaff',
+            borderColor: color.blue,
         }
 
     },
 
-
     // menu_item:hover menu_item_link,
     // menu_item_link: focus {
-    //     color: '#4bcaff',
+    //     color: color.blue,
     // },
 
 
@@ -56,10 +56,10 @@ const styles = StyleSheet.create({
         textDecoration: 'none',
         textTransform: 'uppercase',
         fontSize: 14,
-        fontWeight: 700,
+        fontWeight: font.WeightBold,
         outline: 'none',
         ':focus': {
-            color: '#4bcaff',
+            color: color.blue,
         }
     }
 

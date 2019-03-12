@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { StyleSheet, css } from 'aphrodite/no-important';
+import { font, color } from '../../variables/variables';
+
 import Menu from '../menu';
 
 export default class Header extends React.PureComponent {
@@ -10,7 +12,7 @@ export default class Header extends React.PureComponent {
                 <div className={css(styles.header_nav_wrap)}>
                     <div className={css(styles.header_nav)}>
                         <p className={css(styles.header_logo)}>blu<span className={css(styles.header_logo__color)}>e</span>asy</p>
-                        <Menu />
+                        <Menu menuItems={menuItems} />
                     </div>
                 </div>
                 <div className={css(styles.header_info)}>
@@ -23,6 +25,30 @@ export default class Header extends React.PureComponent {
         );
     }
 }
+
+const menuItems = [
+    {
+        title: 'home',
+        href: '#',
+    },
+    {
+        title: 'services',
+        href: '#',
+    },
+    {
+        title: 'features',
+        href: '#',
+    },
+    {
+        title: 'portfolio',
+        href: '#',
+    },
+    {
+        title: 'contact',
+        href: '#',
+    }
+];
+
 
 const styles = StyleSheet.create({
     header: {
@@ -52,14 +78,14 @@ const styles = StyleSheet.create({
     header_logo: {
         display: 'block',
         margin: 0,
-        color: '#fff',
+        color: color.white,
         fontSize: 30,
-        fontWeight: 700,
+        fontWeight: font.WeightBold,
         textTransform: 'uppercase',
     },
 
     header_logo__color: {
-        color: '#4bcaff',
+        color: color.blue,
     },
 
     header_info: {
@@ -75,7 +101,7 @@ const styles = StyleSheet.create({
         maxWidth: '63%',
         fontSize: 42,
         textTransform: 'uppercase',
-        color: '#fff',
+        color: color.white,
         margin: 0,
     },
 

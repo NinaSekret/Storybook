@@ -2,6 +2,7 @@ import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import Service from '../service';
+import { font, color } from '../../variables/variables';
 
 export default class ServicesHolder extends React.PureComponent {
     render() {
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        color: '#fff'
+        color: color.white
     },
 
     services_wrap: {
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         margin: 0,
         fontSize: 30,
-        fontWeight: 300,
+        fontWeight: font.WeightNormal,
         textTransform: 'uppercase',
         ':after': {
             content: "''",
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
             position: 'absolute',
             top: 33,
             left: 2,
-            backgroundColor: '#fff'
+            backgroundColor: color.white
         },
     },
 });

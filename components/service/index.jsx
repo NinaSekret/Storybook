@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import { StyleSheet, css } from 'aphrodite/no-important';
+import { font, color } from '../../variables/variables';
 
 export default class Services extends React.PureComponent {
     render() {
@@ -20,20 +21,19 @@ const someStyles = {};
 const styles = StyleSheet.create({
     services_item: {
         width: '20%',
-        ...someStyles,
-        color: '#fff',
+        color: color.white,
     },
 
     services_item_title: {
         fontSize: 24,
-        fontWeight: 600,
+        fontWeight: font.WeightBold,
         textTransform: 'uppercase'
     },
 
     services_item_info: {
         fontSize: 12,
-        fontWeight: 600,
-        lineHeight: 1.8
+        fontWeight: font.WeightBold,
+        lineHeight: '14px'
     }
 
 });
